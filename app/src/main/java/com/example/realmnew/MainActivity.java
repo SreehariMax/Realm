@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity {
         if(id==null){
             nextId=1;
         }else {
-            nextId=id.intValue()+1;
+            nextId= id.intValue() + 1;
         }
 
         DataModel data = new DataModel(nextId,sname,sdur,strk,sdesc);
