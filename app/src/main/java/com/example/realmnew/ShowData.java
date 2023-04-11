@@ -26,6 +26,9 @@ public class ShowData extends AppCompatActivity {
         recyclerView=findViewById(R.id.Rcylst);
         realm= Realm.getDefaultInstance();
 
+
+
+
         dataModelList = new ArrayList<>();
 
 

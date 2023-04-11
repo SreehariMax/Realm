@@ -1,6 +1,7 @@
 package com.example.realmnew;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,6 +42,21 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.vh_track.setText(model.getStrk());
         holder.vh_duration.setText(model.getSdur());
         holder.vh_desc.setText(model.getSdesc());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(context, UpdateCourse.class);
+                // on below line we are passing all the data to new activity.
+                i.putExtra("courseName", model.getSname());
+                i.putExtra("courseDescription", model.getSdesc());
+                i.putExtra("courseDuration", model.getSdur());
+                i.putExtra("courseTracks", model.getStrk());
+                i.putExtra("id", model.getId());
+                // on below line we are starting a new activity.
+                context.startActivity(i);
+            }
+        });
 
 
 
